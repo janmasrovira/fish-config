@@ -9,6 +9,7 @@ abbr -a es "emacs --daemon" #abans s'ha d'engegar el servidor emacs (emacs --dae
 abbr -a esc "emacs --daemon and emacsclient -c"
 abbr -a ipython_notebook "ipython3 notebook --pylab inline"
 
+abbr -a backupmusic "time rsync -a -v --delete /media/jan/Dades/Jan/Música/ /media/jan/Disc/backupMusic/"
 abbr -a watch="watch -n 0.5"
 
 abbr -a dirsize="du -hs"
