@@ -1,70 +1,12 @@
-abbr -a ll "ls -alF"
-abbr -a la "ls -A"
-abbr -a l "ls -CF"
-abbr -a ls "ls --color=auto"
+# Path to Oh My Fish install.
+set -q XDG_DATA_HOME
+  and set -gx OMF_PATH "$XDG_DATA_HOME/omf"
+  or set -gx OMF_PATH "$HOME/.local/share/omf"
 
-abbr -a e "emacsclient -t"
-abbr -a ec "emacsclient -c"
-abbr -a es "emacs --daemon" #abans s'ha d'engegar el servidor emacs (emacs --daemon)
-abbr -a esc "emacs --daemon and emacsclient -c"
-abbr -a ipython_notebook "ipython3 notebook --pylab inline"
+# Customize Oh My Fish configuration path.
+#set -gx OMF_CONFIG "/home/jan/.config/omf"
 
-abbr -a bumusic "time rsync -a -v --delete --progress /media/jan/Dades/Jan/Música/ /media/jan/Disc/backupMusic/"
-abbr -a bumovies "time rsync -a -v --progress /media/jan/Dades/Jan/Movies/ /media/jan/Disc/backupMovies"
-abbr -a watch="watch -n 0.5"
+# Load oh-my-fish configuration.
+source $OMF_PATH/init.fish
 
-abbr -a dirsize="du -hs"
-
-abbr -a top="htop" #htop = improved top
-
-abbr -a xclib="xclip -selection clipboard" # can copy things to emacs... yay
-
-abbr -a chrome="google-chrome"
-
-abbr -a concatflac="shntool join -n -o flac *.flac"
-
-abbr -a mountsteam="sudo mount /dev/sda5 /home/jan/Mount/ -o umask=000"
-
-abbr -a getaudio="youtube-dl --extract-audio --audio-quality 9" #download audio
-# from a youtube video usage example: getaudio
-# https://www.youtube.com/watch?v=f6CrzLXUHx4.
-#
-# Since google music does not support m4a, you should convert the downloaded
-# file afterwards to a suitable format (eg ogg): ffmpeg -i file.m4a -f ogg
-# file.ogg. Note that youtube-dl also offers an options for audio conversion,
-# but the size of the converted file is much larger than the original, which
-# does not make any sense.
-
-
-#java jdk
-set JAVA_HOME /usr/local/lib/jdk1.8.0_25
-
-#java 8 jdk bin
-set PATH $PATH /usr/local/lib/jdk1.8.0_25/bin
-
-#stack bin export
-set PATH $HOME/.local/bin $PATH
-
-#cargo bin export
-set PATH $HOME/.cargo/bin $PATH
-
-# global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-7.10.3/bin $PATH
-
-set RUST_SRC_PATH ~/Programs/rust-1.6.0/src
-
-#cabal bin
-set PATH $HOME/.cabal/bin $PATH
-
-#opl shared libraries
-set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/cplex-studio126/opl/bin/x86-64_linux
-
-#cplex libraries
-set CPLUS_INCLUDE_PATH $CPLUS_INCLUDE_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/cplex/include/
-set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/cplex/lib/x86-64_linux/static_pic
-set LIBRARY_PATH $LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/cplex/lib/x86-64_linux/static_pic
-
-#concert libraries (cplex c++ api)
-set CPLUS_INCLUDE_PATH $CPLUS_INCLUDE_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/include
-set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/lib/x86-64_linux/static_pic
-set LIBRARY_PATH $LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/lib/x86-64_linux/static_pic
+source ~/.config/fish/jan-fish.config
