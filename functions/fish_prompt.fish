@@ -1,1 +1,1 @@
-/home/jan/.local/share/omf/themes/chain/fish_prompt.fish
+/home/jan/.local/share/omf/themes/default/fish_prompt.fish
