@@ -3,11 +3,8 @@ set -q XDG_DATA_HOME
   and set -gx OMF_PATH "$XDG_DATA_HOME/omf"
   or set -gx OMF_PATH "$HOME/.local/share/omf"
 
-# Customize Oh My Fish configuration path.
-#set -gx OMF_CONFIG "/home/jan/.config/omf"
-
-source ~/.config/fish/jan-fish.config
+# load my personal config
+source ~/.config/fish/jan-config.fish
 
 # Load oh-my-fish configuration.
 source $OMF_PATH/init.fish
-

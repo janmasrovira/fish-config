@@ -3,7 +3,8 @@ abbr -a la "ls -A"
 abbr -a l "ls -CF"
 abbr -a ls "ls --color=auto"
 
-abbr -a e "emacsclient -t"
+abbr -a enw "emacsclient -nw"
+abbr -a e "emacsclient -c"
 abbr -a ec "emacsclient -c"
 abbr -a es "emacs --daemon"
 abbr -a esc "emacs --daemon and emacsclient -c"
@@ -53,11 +54,14 @@ set PATH $HOME/.local/bin $PATH
 # global stack ghc bin
 set PATH ~/.stack/programs/x86_64-linux/ghc-8.0.2/bin $PATH
 
+# xdg config home
+set --export XDG_CONFIG_HOME $HOME/.config
+
+# google-cloud-sdk binaries (gsutil, gcloud...)
+set PATH $HOME/programs/google-cloud-sdk/bin $PATH
+
 set VISUAL emacsclient -c -a gedit
 set EDITOR emacsclient
-
-
-set RUST_SRC_PATH ~/Programs/rust-1.6.0/src
 
 # OCAML
 set PATH $HOME/.opam/4.03.0+flambda/bin $PATH
@@ -75,3 +79,6 @@ set -g Z_SCRIPT_PATH $HOME/.zsh/z.sh
 # set CPLUS_INCLUDE_PATH $CPLUS_INCLUDE_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/include
 # set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/lib/x86-64_linux/static_pic
 # set LIBRARY_PATH $LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/lib/x86-64_linux/static_pic
+
+# advanced functional programming lab3 reactive banana
+set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/projects/reactive-spreadsheet/.stack-work/install/x86_64-linux/lts-6.30/7.10.3/lib/x86_64-linux-ghc-7.10.3/wxc-0.92.2.0-Be0BIRCq3e9CuTZLB6Mhx8
