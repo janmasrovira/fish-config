@@ -39,13 +39,15 @@ abbr -a getaudio "youtube-dl --extract-audio --audio-quality 9" #download audio
 
 abbr -a gitzip "git archive HEAD --format=zip > repo.zip"
 
+abbr -a texclean "rm -rf auto/ *.log *.toc *.aux"
+
 #own python modules
 set --export PYTHONPATH $HOME/projects $PYTHONPATH
 
-#java jdk
+# java jdk
 set --export JAVA_HOME /usr/local/lib/jdk1.8.0_92
 
-#java 8 jdk bin
+# java 8 jdk bin
 set PATH $PATH /usr/local/lib/jdk1.8.0_92/bin
 
 #stack bin export
@@ -53,6 +55,14 @@ set PATH $HOME/.local/bin $PATH
 
 # global stack ghc bin
 set PATH ~/.stack/programs/x86_64-linux/ghc-8.0.2/bin $PATH
+
+# HOL path
+set HOLDIR $HOLDIR ~/programs/HOL
+set PATH $HOLDIR/bin $PATH
+
+# needed to make android studio work on xmonad
+# https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
+set --export _JAVA_AWT_WM_NONREPARENTING 1
 
 # xdg config home
 set --export XDG_CONFIG_HOME $HOME/.config
