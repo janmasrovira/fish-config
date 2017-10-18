@@ -60,6 +60,12 @@ set PATH ~/.stack/programs/x86_64-linux/ghc-8.0.2/bin $PATH
 set HOLDIR $HOLDIR ~/programs/HOL
 set PATH $HOLDIR/bin $PATH
 
+# sdkman
+set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
+
+# rust
+# set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
 # needed to make android studio work on xmonad
 # https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
 set --export _JAVA_AWT_WM_NONREPARENTING 1
