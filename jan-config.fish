@@ -44,6 +44,9 @@ abbr -a texclean "rm -rf auto/ *.log *.toc *.aux"
 #own python modules
 set --export PYTHONPATH $HOME/projects $PYTHONPATH
 
+# use '.' in decimal numbers
+set --export LC_NUMERIC "en_US.UTF-8"
+
 # java jdk
 set --export JAVA_HOME /usr/local/lib/jdk1.8.0_92
 
