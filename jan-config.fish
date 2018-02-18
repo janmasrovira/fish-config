@@ -9,6 +9,7 @@ abbr -a ec "emacsclient -c"
 abbr -a es "emacs --daemon"
 abbr -a esc "emacs --daemon and emacsclient -c"
 abbr -a ipython_notebook "ipython3 notebook --pylab inline"
+abbr -a pdf "zathura"
 
 # note that the trailing / is important!
 abbr -a bumusic "time rsync -a -v --delete --progress /media/jan/LocalDisk/Music/ /media/jan/Disc/Music/"
