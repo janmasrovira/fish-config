@@ -58,7 +58,7 @@ set PATH $PATH /usr/local/lib/jdk1.8.0_92/bin
 set PATH $HOME/.local/bin $PATH
 
 # global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-8.0.2/bin $PATH
+set PATH /home/jan/.stack/programs/x86_64-linux/ghc-8.2.2/bin $PATH
 
 # HOL path
 set HOLDIR $HOLDIR ~/programs/HOL
