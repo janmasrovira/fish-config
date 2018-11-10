@@ -2,7 +2,7 @@ abbr -a ll "ls -alF"
 abbr -a la "ls -A"
 abbr -a l "ls -CF"
 abbr -a ls "ls --color=auto"
-
+abbr -a cp "gcp"
 abbr -a enw "emacsclient -nw"
 abbr -a e "emacsclient -c"
 abbr -a ec "emacsclient -c"
@@ -42,6 +42,8 @@ abbr -a gitzip "git archive HEAD --format=zip > repo.zip"
 
 abbr -a texclean "rm -rf auto/ *.log *.toc *.aux"
 
+set --export TERM xterm-256color
+
 #own python modules
 set --export PYTHONPATH $HOME/projects $PYTHONPATH
 
@@ -58,7 +60,7 @@ set PATH $PATH /usr/local/lib/jdk1.8.0_92/bin
 set PATH $HOME/.local/bin $PATH
 
 # global stack ghc bin
-set PATH /home/jan/.stack/programs/x86_64-linux/ghc-8.2.2/bin $PATH
+set PATH /home/jan/.stack/programs/x86_64-linux/ghc-8.6.1/bin $PATH
 
 # HOL path
 set HOLDIR $HOLDIR ~/programs/HOL
