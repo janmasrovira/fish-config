@@ -1,14 +1,12 @@
-abbr -a ll "ls -alF"
-abbr -a la "ls -A"
-abbr -a l "ls -CF"
-abbr -a ls "ls --color=auto"
+abbr -a ll "colorls -lA"
+abbr -a la "colorls -A"
+abbr -a ls "colorls"
 abbr -a cp "gcp"
 abbr -a enw "emacsclient -nw"
 abbr -a e "emacsclient -c"
 abbr -a ec "emacsclient -c"
 abbr -a es "emacs --daemon"
 abbr -a esc "emacs --daemon and emacsclient -c"
-abbr -a ipython_notebook "ipython3 notebook --pylab inline"
 abbr -a pdf "zathura"
 
 # note that the trailing / is important!
@@ -17,6 +15,8 @@ abbr -a bumovies "time rsync -a -v --progress /media/jan/Dades/Jan/Movies/ /medi
 abbr -a watch "watch -n 0.5"
 
 abbr -a dirsize "du -hs"
+
+abbr -a ctrl "xmodmap ~/.xmonad swap_control_caps"
 
 abbr -a top "htop" #htop = improved top
 
@@ -60,11 +60,7 @@ set PATH $PATH /usr/local/lib/jdk1.8.0_92/bin
 set PATH $HOME/.local/bin $PATH
 
 # global stack ghc bin
-set PATH /home/jan/.stack/programs/x86_64-linux/ghc-8.6.1/bin $PATH
-
-# HOL path
-set HOLDIR $HOLDIR ~/programs/HOL
-set PATH $HOLDIR/bin $PATH
+set PATH /home/jan/.stack/programs/x86_64-linux/ghc-8.6.5/bin $PATH
 
 # sdkman
 set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
@@ -92,15 +88,8 @@ set -g Z_SCRIPT_PATH $HOME/.zsh/z.sh
 #opl shared libraries
 # set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/cplex-studio126/opl/bin/x86-64_linux
 
-#cplex libraries
-# set CPLUS_INCLUDE_PATH $CPLUS_INCLUDE_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/cplex/include/
-# set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/cplex/lib/x86-64_linux/static_pic
-# set LIBRARY_PATH $LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/cplex/lib/x86-64_linux/static_pic
-
-# #concert libraries (cplex c++ api)
-# set CPLUS_INCLUDE_PATH $CPLUS_INCLUDE_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/include
-# set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/lib/x86-64_linux/static_pic
-# set LIBRARY_PATH $LIBRARY_PATH $HOME/Programs/CPLEX_Enterprise_Server126/CPLEX_Studio/concert/lib/x86-64_linux/static_pic
-
 # advanced functional programming lab3 reactive banana
 set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/projects/reactive-spreadsheet/.stack-work/install/x86_64-linux/lts-6.30/7.10.3/lib/x86_64-linux-ghc-7.10.3/wxc-0.92.2.0-Be0BIRCq3e9CuTZLB6Mhx8
+
+# libfuse, for sshfs
+set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib
