@@ -8,6 +8,7 @@ abbr -a ec "emacsclient -c"
 abbr -a es "emacs --daemon"
 abbr -a esc "emacs --daemon and emacsclient -c"
 abbr -a pdf "zathura"
+abbr -a caps "cd ~/.xmonad; xmodmap swap_ctrl_caps; cd"
 
 # note that the trailing / is important!
 abbr -a bumusic "time rsync -a -v --delete --progress /media/jan/LocalDisk/Music/ /media/jan/Disc/Music/"
