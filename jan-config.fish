@@ -8,7 +8,9 @@ abbr -a ec "emacsclient -c"
 abbr -a es "emacs --daemon"
 abbr -a esc "emacs --daemon and emacsclient -c"
 abbr -a pdf "zathura"
+abbr -a mp "ncmpcpp"
 abbr -a caps "xmodmap ~/.Xmodmap"
+abbr -a cap "xmodmap ~/.Xmodmap; and xmodmap ~/.Xmodmap"
 
 # note that the trailing / is important!
 abbr -a bumusic "time rsync -a -v --delete --progress /media/jan/LocalDisk/Music/ /media/jan/Disc/Music/"
@@ -52,10 +54,11 @@ set --export PYTHONPATH $HOME/projects $PYTHONPATH
 set --export LC_NUMERIC "en_US.UTF-8"
 
 # java jdk
-set --export JAVA_HOME /usr/local/lib/jdk1.8.0_92
+# set --export JAVA_HOME /usr/local/lib/jdk1.8.0_92
+set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 # java 8 jdk bin
-set PATH $PATH /usr/local/lib/jdk1.8.0_92/bin
+# set PATH $PATH /usr/local/lib/jdk1.8.0_92/bin
 
 #stack bin export
 set PATH $HOME/.local/bin $PATH
