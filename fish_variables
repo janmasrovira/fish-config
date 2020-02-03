@@ -3,7 +3,8 @@
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR _fish_abbr_bumovies:time\x20rsync\x20\x2da\x20\x2dv\x20\x2d\x2dprogress\x20/media/jan/Dades/Jan/Movies/\x20/media/jan/Disc/Movies/
 SETUVAR _fish_abbr_bumusic:time\x20rsync\x20\x2da\x20\x2dv\x20\x2d\x2ddelete\x20\x2d\x2dprogress\x20/media/jan/LocalDisk/Music/\x20/media/jan/Disc/Music/
-SETUVAR _fish_abbr_caps:cd\x20\x7e/\x2exmonad\x3b\x20xmodmap\x20swap_ctrl_caps\x3b\x20cd
+SETUVAR _fish_abbr_cap:xmodmap\x20\x7e/\x2eXmodmap\x3b\x20and\x20xmodmap\x20\x7e/\x2eXmodmap
+SETUVAR _fish_abbr_caps:xmodmap\x20\x7e/\x2eXmodmap
 SETUVAR _fish_abbr_chrome:google\x2dchrome
 SETUVAR _fish_abbr_concatflac:shntool\x20join\x20\x2dn\x20\x2do\x20flac\x20\x2a\x2eflac
 SETUVAR _fish_abbr_cp:gcp
@@ -20,6 +21,7 @@ SETUVAR _fish_abbr_la:colorls\x20\x2dA
 SETUVAR _fish_abbr_ll:colorls\x20\x2dlA
 SETUVAR _fish_abbr_ls:colorls
 SETUVAR _fish_abbr_mountsteam:sudo\x20mount\x20/dev/sda5\x20/home/jan/Mount/\x20\x2do\x20umask\x3d000
+SETUVAR _fish_abbr_mp:ncmpcpp
 SETUVAR _fish_abbr_pdf:zathura
 SETUVAR _fish_abbr_texclean:rm\x20\x2drf\x20auto/\x20\x2a\x2elog\x20\x2a\x2etoc\x20\x2a\x2eaux
 SETUVAR _fish_abbr_top:htop
