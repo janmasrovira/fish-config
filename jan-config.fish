@@ -71,6 +71,7 @@ set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
 
 # rust
 # set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+set PATH $PATH ~/.cargo/bin
 
 # needed to make android studio work on xmonad
 # https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
