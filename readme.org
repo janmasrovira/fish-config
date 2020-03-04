@@ -1,3 +1,9 @@
 * Readme
   This fish configuration depends on omf, refer to the repository for
   installation instructions: [[https://github.com/oh-my-fish/oh-my-fish]].
+
+* Additional packages
+** Theme
+   I use the default theme.
+** Z
+   Refer to [[https://github.com/oh-my-fish/plugin-z]].
