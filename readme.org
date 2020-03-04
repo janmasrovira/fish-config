@@ -1,0 +1,3 @@
+* Readme
+  This fish configuration depends on omf, refer to the repository for
+  installation instructions: [[https://github.com/oh-my-fish/oh-my-fish]].
