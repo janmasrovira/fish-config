@@ -55,11 +55,7 @@ set --export PYTHONPATH $HOME/projects $PYTHONPATH
 set --export LC_NUMERIC "en_US.UTF-8"
 
 # java jdk
-# set --export JAVA_HOME /usr/local/lib/jdk1.8.0_92
 set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
-
-# java 8 jdk bin
-# set PATH $PATH /usr/local/lib/jdk1.8.0_92/bin
 
 #stack bin export
 set PATH $HOME/.local/bin $PATH
@@ -87,15 +83,8 @@ set PATH $HOME/programs/google-cloud-sdk/bin $PATH
 set VISUAL emacsclient -c -a gedit
 set EDITOR emacsclient
 
-# OCAML
-set PATH $HOME/.opam/4.03.0+flambda/bin $PATH
-
-set -g Z_SCRIPT_PATH $HOME/.zsh/z.sh
 #opl shared libraries
 # set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/cplex-studio126/opl/bin/x86-64_linux
-
-# advanced functional programming lab3 reactive banana
-set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/projects/reactive-spreadsheet/.stack-work/install/x86_64-linux/lts-6.30/7.10.3/lib/x86_64-linux-ghc-7.10.3/wxc-0.92.2.0-Be0BIRCq3e9CuTZLB6Mhx8
 
 # libfuse, for sshfs
 set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib
