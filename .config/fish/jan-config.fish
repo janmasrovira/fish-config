@@ -44,7 +44,7 @@ abbr -a getaudio "youtube-dl --extract-audio --audio-quality 9" #download audio
 
 abbr -a gitzip "git archive HEAD --format=zip > repo.zip"
 
-abbr -a texclean "rm -rf auto/ *.log *.toc *.aux"
+abbr -a texclean "rm -rf auto/ *.log *.toc *.aux *.fls"
 
 set --export TERM xterm-256color
 
@@ -61,7 +61,7 @@ set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 set PATH $HOME/.local/bin $PATH
 
 # global stack ghc bin
-set PATH /home/jan/.stack/programs/x86_64-linux/ghc-8.6.5/bin $PATH
+set PATH $HOME/.stack/programs/x86_64-linux/ghc-8.6.5/bin $PATH
 
 # sdkman
 set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
@@ -69,6 +69,9 @@ set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
 # rust
 # set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 set PATH $PATH ~/.cargo/bin
+
+# texlive 2020
+set PATH $PATH /usr/local/texlive/2020/bin/x86_64-linux
 
 # needed to make android studio work on xmonad
 # https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
@@ -88,3 +91,5 @@ set EDITOR emacsclient
 
 # libfuse, for sshfs
 set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib
+
+set --export LEDGER_FILE ~/projects/balances/balances.hledger
