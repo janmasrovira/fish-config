@@ -44,7 +44,8 @@ abbr -a getaudio "youtube-dl --extract-audio --audio-quality 9" #download audio
 
 abbr -a gitzip "git archive HEAD --format=zip > repo.zip"
 
-abbr -a texclean "rm -rf auto/ *.log *.toc *.aux *.fls *.bcf *.gls *.ist *.run.xml *.glg *.blg *.fdb_latexmk _minted*"
+abbr -a texclean "rm -rf auto/ *.log *.toc *.aux *.fls *.bcf *.gls *.ist
+    *.run.xml *.glg *.blg *.fdb_latexmk _minted* *.out *.pyg *.glo *.synctex.gz"
 
 set --export TERM xterm-256color
 
