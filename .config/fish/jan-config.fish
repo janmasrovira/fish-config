@@ -66,6 +66,9 @@ set PATH $HOME/.stack/programs/x86_64-linux/ghc-8.6.5/bin $PATH
 # sdkman
 set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
 
+# emacs cask
+set PATH $PATH ~/.cask/bin
+
 # rust
 # set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 set PATH $PATH ~/.cargo/bin
