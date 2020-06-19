@@ -96,3 +96,6 @@ set EDITOR emacsclient
 set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib
 
 set --export LEDGER_FILE ~/projects/balances/balances.hledger
+
+# starship init
+starship init fish | source
