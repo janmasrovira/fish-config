@@ -12,6 +12,7 @@ abbr -a esc "emacs --daemon and emacsclient -c"
 abbr -a pdf "zathura"
 abbr -a mp "ncmpcpp"
 abbr -a cap "setxkbmap -option \"ctrl:swapcaps\""
+abbr -a cat "bat"
 
 # note that the trailing / is important!
 abbr -a bumusic "time rsync -a -v --delete --progress /media/jan/LocalDisk/Music/ /media/jan/Disc/Music/"
