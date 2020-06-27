@@ -74,6 +74,9 @@ set PATH $PATH ~/.cask/bin
 # set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 set PATH $PATH ~/.cargo/bin
 
+# ocaml / opam
+set PATH $PATH ~/.opam/4.10.0/bin
+
 # texlive 2020
 set PATH $PATH /usr/local/texlive/2020/bin/x86_64-linux
 
