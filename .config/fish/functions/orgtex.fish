@@ -6,7 +6,7 @@
 # use: cd /report && orgtex report
 function orgtex
     set cmd "latexmk -pvc $argv[1]"
-    tmux split-window -v
-    tmux send-keys -t bottom $cmd C-m
+    set newpane (tmux split-window -v -P -F "#{pane_id}")
+    tmux send-keys -t $newpane $cmd C-m
     orgpvc $argv[1]
 end
