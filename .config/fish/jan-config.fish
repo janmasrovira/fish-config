@@ -59,10 +59,13 @@ set --export LC_NUMERIC "en_US.UTF-8"
 set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
 #stack bin export
-set PATH $HOME/.local/bin $PATH
+set PATH ~/.local/bin $PATH
+
+#cabal bin
+set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
-set PATH $HOME/.stack/programs/x86_64-linux/ghc-8.6.5/bin $PATH
+set PATH ~/.stack/programs/x86_64-linux/ghc-8.6.5/bin $PATH
 
 # sdkman
 set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
@@ -88,7 +91,7 @@ set --export _JAVA_AWT_WM_NONREPARENTING 1
 set --export XDG_CONFIG_HOME $HOME/.config
 
 # google-cloud-sdk binaries (gsutil, gcloud...)
-set PATH $HOME/programs/google-cloud-sdk/bin $PATH
+set PATH ~/programs/google-cloud-sdk/bin $PATH
 
 set VISUAL emacsclient -c -a gedit
 set EDITOR emacsclient
