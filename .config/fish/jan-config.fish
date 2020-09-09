@@ -13,6 +13,7 @@ abbr -a pdf "zathura"
 abbr -a mp "ncmpcpp"
 abbr -a cap "setxkbmap -option \"ctrl:swapcaps\""
 abbr -a cat "bat"
+abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 
 # note that the trailing / is important!
 abbr -a bumusic "time rsync -a -v --delete --progress /media/jan/LocalDisk/Music/ /media/jan/Disc/Music/"
