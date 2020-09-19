@@ -3,7 +3,6 @@ abbr -a la "exa -a --icons"
 abbr -a ls "exa --icons"
 abbr -a bs "br -p"
 abbr -a bd "br -pf"
-abbr -a cp "gcp"
 abbr -a enw "emacsclient -nw"
 abbr -a e "emacsclient -c"
 abbr -a ec "emacsclient -c"
@@ -26,7 +25,7 @@ abbr -a ctrl "xmodmap ~/.xmonad swap_control_caps"
 
 abbr -a top "htop" #htop = improved top
 
-abbr -a xclib "xclip -selection clipboard" # can copy things to emacs... yay
+abbr -a xclib "xclip -selection clipboard"
 
 abbr -a chrome "google-chrome"
 
