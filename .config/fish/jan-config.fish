@@ -1,3 +1,6 @@
+bind \ck history-search-backward
+bind \cj history-search-forward
+
 abbr -a ll "exa -lah --icons"
 abbr -a la "exa -a --icons"
 abbr -a ls "exa --icons"
@@ -66,7 +69,7 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-8.6.5/bin $PATH
+set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-8.10.2/bin $PATH
 
 # sdkman
 set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
@@ -79,7 +82,8 @@ set PATH $PATH ~/.cask/bin
 set PATH $PATH ~/.cargo/bin
 
 # ocaml / opam
-set PATH $PATH ~/.opam/4.10.0/bin
+# set PATH $PATH ~/.opam/4.10.0/bin
+eval (opam env)
 
 # texlive 2020
 set PATH $PATH /usr/local/texlive/2020/bin/x86_64-linux
