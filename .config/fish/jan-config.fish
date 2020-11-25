@@ -16,7 +16,9 @@ abbr -a pdf "zathura"
 abbr -a mp "ncmpcpp"
 abbr -a cap "setxkbmap -option \"ctrl:swapcaps\""
 abbr -a cat "bat"
+abbr -a cloc "tokei"
 abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
+abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | awk '/^Nmap/{ip=\$NF}/B8:27:EB/{print ip}'"
 
 # note that the trailing / is important!
 abbr -a bumusic "time rsync -a -v --delete --progress /media/jan/LocalDisk/Music/ /media/jan/Disc/Music/"
