@@ -7,7 +7,7 @@ function orgpvc
         docker create -ti --rm --name orgpvc janmasrovira/emacs-org:27.1
         docker start orgpvc
         docker cp . orgpvc:/home/
-        set cmd "export EMACSLOADPATH=\$(cat /root/load-path) && cd /home/ && emacs $argv[1].org -batch -l ~/init.el -f org-latex-export-to-latex"
+        set cmd "export EMACSLOADPATH=\$(cat /root/load-path) && cd /home/ && emacs $argv[1].org -batch -l ~/init.el -f load-init-block -f org-latex-export-to-latex"
         echo $cmd
         docker exec orgpvc sh -c $cmd
         docker cp orgpvc:/home/$argv[1].tex .
