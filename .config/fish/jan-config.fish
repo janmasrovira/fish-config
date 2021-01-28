@@ -71,7 +71,7 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-8.10.2/bin $PATH
+set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-8.10.3/bin $PATH
 
 set PATH ~/.gem/ruby/2.7.0/bin $PATH
 
