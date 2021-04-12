@@ -5,9 +5,5 @@
 
 # use: cd /report && orgpdf report
 function orgpdf
-    set cmd "latexmk -pvc $argv[1]"
-    set newpane (tmux split-window -v -P -F "#{pane_id}")
-    sleep 0.1 # needed so fish has time to start in the new pane.
-    tmux send-keys -t $newpane $cmd C-m
-    orgpvc $argv[1]
+    orgpvc-generic latex $target
 end
