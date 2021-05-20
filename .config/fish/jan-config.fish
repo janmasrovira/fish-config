@@ -21,8 +21,8 @@ abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | awk '/^Nmap/{ip=\$NF}/B8:27:EB/{print ip}'"
 
 # note that the trailing / is important!
-abbr -a bumusic "time rsync -a -v --delete --progress /media/jan/LocalDisk/Music/ /media/jan/Disc/Music/"
-abbr -a bumovies "time rsync -a -v --progress /media/jan/Dades/Jan/Movies/ /media/jan/Disc/Movies/"
+abbr -a bumusic "time rsync -a -v --progress /media/LocalDisk/Music/ pi/music/"
+abbr -a bumusicdel "time rsync -a -v --delete --progress /media/LocalDisk/Music/ pi/music/"
 abbr -a watch "watch -n 0.5"
 
 abbr -a dirsize "du -hs"
@@ -71,7 +71,7 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-8.10.3/bin $PATH
+set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-8.10.4/bin $PATH
 
 set PATH ~/.gem/ruby/2.7.0/bin $PATH
 
@@ -89,8 +89,8 @@ set PATH $PATH ~/.cargo/bin
 # set PATH $PATH ~/.opam/4.10.0/bin
 eval (opam env)
 
-# texlive 2020
-set PATH $PATH /usr/local/texlive/2020/bin/x86_64-linux
+# texlive 2021
+set PATH $PATH /usr/local/texlive/2021/bin/x86_64-linux
 
 # needed to make android studio work on xmonad
 # https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
