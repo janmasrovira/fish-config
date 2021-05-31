@@ -21,8 +21,8 @@ abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | awk '/^Nmap/{ip=\$NF}/B8:27:EB/{print ip}'"
 
 # note that the trailing / is important!
-abbr -a bumusic "time rsync -a -v --progress /run/media/LocalDisk/Music/ pi/music/"
-abbr -a bumusicdel "time rsync -a -v --delete --progress /run/media/LocalDisk/Music/ pi/music/"
+abbr -a bumusic "time rsync -a -v --progress /run/media/jan/LocalDisk/Music/ pi/music/"
+abbr -a bumusicdel "time rsync -a -v --delete --progress /run/media/jan/LocalDisk/Music/ pi/music/"
 abbr -a watch "watch -n 0.5"
 
 abbr -a dirsize "du -hs"
