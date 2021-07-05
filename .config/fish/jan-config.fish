@@ -20,9 +20,17 @@ abbr -a cloc "tokei"
 abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | awk '/^Nmap/{ip=\$NF}/B8:27:EB/{print ip}'"
 
+
+# Add ~/coq/bin (my local dev branch of Coq) to the PATH
+# This allows emacs to find it
+set PATH ~/projects/fv/coq/_build/install/default/bin $PATH
+# Tells make to automatically use dune in coq dev
+set --export COQ_USE_DUNE true
+
+
 # note that the trailing / is important!
-abbr -a bumusic "time rsync -a -v --progress /run/media/jan/LocalDisk/Music/ pi/music/"
-abbr -a bumusicdel "time rsync -a -v --delete --progress /run/media/jan/LocalDisk/Music/ pi/music/"
+abbr -a bumusic "time rsync -ahvP /run/media/jan/LocalDisk/Music/ pi/music/"
+abbr -a bumusicdel "time rsync -ahvP --delete --exclude '*.nfo' /run/media/jan/LocalDisk/Music/ pi/music/"
 abbr -a watch "watch -n 0.5"
 
 abbr -a dirsize "du -hs"
@@ -71,7 +79,7 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-8.10.4/bin $PATH
+set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.0.1/bin $PATH
 
 set PATH ~/.gem/ruby/2.7.0/bin $PATH
 
