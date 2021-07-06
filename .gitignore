@@ -2,3 +2,6 @@
 fish_variables
 /.config/fish/functions/__*.fish
 /.config/fish/functions/fisher.fish
+/.config/fish/fish_plugins
+/.config/fish/completions/fisher.fish
+/.config/fish/conf.d/

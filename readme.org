@@ -5,5 +5,11 @@
 ** Additional packages
 *** Theme
     I use the default theme.
+*** Fisher
+    Install [[https://github.com/jorgebucaran/fisher][Fisher]] thus:
+    #+begin_src fish
+    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+    #+end_src
 *** Z
+    Install [[https://github.com/jethrokuan/z][z]] thus:
     Refer to [[https://github.com/oh-my-fish/plugin-z]].
