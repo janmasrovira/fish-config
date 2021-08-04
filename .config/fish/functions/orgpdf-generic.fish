@@ -1,9 +1,7 @@
-#!/usr/local/bin/fish
-
 # it splits horizontally the current tmux pane into 2 panes.
 # the top pane runs orgpvc-generic and the bottom pane runs latexmk.
 
-# use: cd /report && orgpdf [latex | beamer] report
+# use: cd /report && orgpdf-generic [latex | beamer] report
 function orgpdf-generic --argument-names backend target
     set cmd "latexmk -pvc $target"
     set newpane (tmux split-window -v -P -F "#{pane_id}")

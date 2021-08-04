@@ -1,5 +1,3 @@
-#!/usr/local/bin/fish
-
 # use: orghtml orgfile (without extension)
 function orghtml
     echo "watching " $argv[1].org

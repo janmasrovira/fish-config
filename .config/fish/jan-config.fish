@@ -1,6 +1,3 @@
-bind \ck history-search-backward
-bind \cj history-search-forward
-
 abbr -a ll "exa -lah --icons"
 abbr -a la "exa -a --icons"
 abbr -a ls "exa --icons"
@@ -121,5 +118,6 @@ set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib
 
 set --export LEDGER_FILE ~/projects/balances/balances.hledger
 
-# starship init
+jan_key_bindings
+
 starship init fish | source
