@@ -92,7 +92,9 @@ set PATH $PATH ~/.cargo/bin
 
 # ocaml / opam
 # set PATH $PATH ~/.opam/4.10.0/bin
-eval (opam env)
+if type -q opam
+    eval (opam env)
+end
 
 # texlive 2021
 set PATH $PATH /usr/local/texlive/2021/bin/x86_64-linux
@@ -120,4 +122,6 @@ set --export LEDGER_FILE ~/projects/balances/balances.hledger
 
 jan_key_bindings
 
-starship init fish | source
+if type -q starship
+    starship init fish | source
+end
