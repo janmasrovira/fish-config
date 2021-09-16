@@ -67,7 +67,7 @@ set --export PYTHONPATH $HOME/projects $PYTHONPATH
 set --export LC_NUMERIC "en_US.UTF-8"
 
 # java jdk
-set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk
 
 #stack bin export
 set PATH ~/.local/bin $PATH
@@ -111,12 +111,6 @@ set PATH ~/programs/google-cloud-sdk/bin $PATH
 
 set VISUAL emacsclient -c -a gedit
 set EDITOR emacsclient
-
-#opl shared libraries
-# set LD_LIBRARY_PATH $LD_LIBRARY_PATH $HOME/Programs/cplex-studio126/opl/bin/x86-64_linux
-
-# libfuse, for sshfs
-set --export LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib
 
 set --export LEDGER_FILE ~/projects/balances/balances.hledger
 
