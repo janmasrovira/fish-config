@@ -67,7 +67,7 @@ set --export PYTHONPATH $HOME/projects $PYTHONPATH
 set --export LC_NUMERIC "en_US.UTF-8"
 
 # java jdk
-set --export JAVA_HOME /usr/lib/jvm/java-8-openjdk
+set --export JAVA_HOME /usr/lib/jvm/java-15-adoptopenjdk
 
 #stack bin export
 set PATH ~/.local/bin $PATH
@@ -101,7 +101,7 @@ set PATH $PATH /usr/local/texlive/2021/bin/x86_64-linux
 
 # needed to make android studio work on xmonad
 # https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
-set --export _JAVA_AWT_WM_NONREPARENTING 1
+# set --export _JAVA_AWT_WM_NONREPARENTING 1
 
 # xdg config home
 set --export XDG_CONFIG_HOME $HOME/.config
