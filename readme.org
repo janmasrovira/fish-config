@@ -12,4 +12,6 @@
     #+end_src
 *** Z
     Install [[https://github.com/jethrokuan/z][z]] thus:
-    Refer to [[https://github.com/oh-my-fish/plugin-z]].
+    #+begin_example
+    fisher install jethrokuan/z
+    #+end_example
