@@ -1,4 +1,5 @@
 abbr -a ll "exa -lah --icons"
+abbr -a find "fd"
 abbr -a la "exa -a --icons"
 abbr -a ls "exa --icons"
 abbr -a bs "br -p"
@@ -76,7 +77,7 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.0.1/bin $PATH
+set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.2/bin $PATH
 
 set PATH ~/.gem/ruby/2.7.0/bin $PATH
 
