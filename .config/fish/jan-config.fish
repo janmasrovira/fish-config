@@ -87,6 +87,8 @@ set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
 # emacs cask
 set PATH $PATH ~/.cask/bin
 
+set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
+
 # rust
 # set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 set PATH $PATH ~/.cargo/bin
@@ -98,7 +100,7 @@ if type -q opam
 end
 
 # texlive 2021
-set PATH $PATH /usr/local/texlive/2021/bin/x86_64-linux
+set PATH $PATH /usr/local/texlive/2022/bin/x86_64-linux
 
 # needed to make android studio work on xmonad
 # https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
