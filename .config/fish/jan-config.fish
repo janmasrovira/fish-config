@@ -16,7 +16,7 @@ abbr -a cat "bat"
 abbr -a cloc "tokei"
 abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | awk '/^Nmap/{ip=\$NF}/B8:27:EB/{print ip}'"
-
+abbr -a doom "doom --doomdir ~/dotfiles/doom/.doom.d --localdir ~/dotfiles/doom/.emacs.d/.local"
 
 # Add ~/coq/bin (my local dev branch of Coq) to the PATH
 # This allows emacs to find it
@@ -42,8 +42,6 @@ abbr -a chrome "google-chrome"
 
 abbr -a concatflac "shntool join -n -o flac *.flac"
 
-abbr -a mountsteam "sudo mount /dev/sda5 /home/jan/Mount/ -o umask=000"
-
 abbr -a getaudio "youtube-dl --extract-audio --audio-quality 9" #download audio
 # from a youtube video usage example: getaudio
 # https://www.youtube.com/watch?v=f6CrzLXUHx4.
@@ -60,9 +58,6 @@ abbr -a texclean "rm -rf auto/ *.log *.toc *.aux *.fls *.bcf *.gls *.ist *.run.x
 
 set --export TERM xterm-256color
 
-#own python modules
-set --export PYTHONPATH $HOME/projects $PYTHONPATH
-
 # use '.' in decimal numbers
 set --export LC_NUMERIC "en_US.UTF-8"
 
@@ -77,14 +72,6 @@ set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
 set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.2/bin $PATH
-
-set PATH ~/.gem/ruby/2.7.0/bin $PATH
-
-# sdkman
-set PATH $PATH ~/.sdkman/candidates/kotlin/current/bin
-
-# emacs cask
-set PATH $PATH ~/.cask/bin
 
 set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
 
