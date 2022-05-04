@@ -85,8 +85,11 @@ if type -q opam
     eval (opam env)
 end
 
-# texlive 2021
+# texlive 2022
 set PATH $PATH /usr/local/texlive/2022/bin/x86_64-linux
+
+# emscripten
+set PATH $PATH /usr/lib/emscripten/
 
 # needed to make android studio work on xmonad
 # https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console

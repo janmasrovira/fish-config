@@ -3,9 +3,8 @@ fish_variables
 /.config/fish/functions/__*.fish
 /.config/fish/functions/fisher.fish
 /.config/fish/fish_plugins
-/.config/fish/completions/fisher.fish
 /.config/fish/conf.d/
 /.config/fish/functions/_nvm*
 /.config/fish/functions/nvm.fish
-/.config/fish/completions/nvm.fish
 *~
+/.config/fish/completions/*.fish
