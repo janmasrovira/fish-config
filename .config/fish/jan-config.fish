@@ -1,6 +1,7 @@
 abbr -a ll "exa -lah --icons"
 abbr -a find "fd"
 abbr -a la "exa -a --icons"
+abbr -a r "cd (command git rev-parse --show-toplevel)"
 abbr -a ls "exa --icons"
 abbr -a bs "br -p"
 abbr -a bd "br -pf"
@@ -37,8 +38,6 @@ abbr -a ctrl "xmodmap ~/.xmonad swap_control_caps"
 abbr -a top "htop" #htop = improved top
 
 abbr -a xclib "xclip -selection clipboard"
-
-abbr -a chrome "google-chrome"
 
 abbr -a concatflac "shntool join -n -o flac *.flac"
 
@@ -87,6 +86,9 @@ end
 
 # texlive 2022
 set PATH $PATH /usr/local/texlive/2022/bin/x86_64-linux
+
+# wasi
+set --export WASI_SYSROOT_PATH ~/programs/wasi-sysroot
 
 # emscripten
 set PATH $PATH /usr/lib/emscripten/
