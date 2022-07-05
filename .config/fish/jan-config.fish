@@ -17,7 +17,7 @@ abbr -a cat "bat"
 abbr -a cloc "tokei"
 abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | awk '/^Nmap/{ip=\$NF}/B8:27:EB/{print ip}'"
-abbr -a doom "doom --doomdir ~/dotfiles/doom/.doom.d --localdir ~/dotfiles/doom/.emacs.d/.local"
+abbr -a doom "doom --doomdir ~/dotfiles/doom/.doom.d --emacsdir ~/dotfiles/doom/.emacs.d"
 
 # Add ~/coq/bin (my local dev branch of Coq) to the PATH
 # This allows emacs to find it
@@ -70,7 +70,7 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.2/bin $PATH
+set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.3/bin $PATH
 
 set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
 
