@@ -1,8 +1,10 @@
 # use: cd /report && orgpvc-generic [latex | beamer] report
 function orgpvc-generic --argument-names backend target
     echo "watching " $target.org
+    set dockerversion "2022-07-16"
+    echo "using version " $dockerversion
     while inotifywait -e close_write $target.org
-        docker create -ti --rm --name orgpvc -v (pwd):/home/work janmasrovira/emacs-org:27.2
+        docker create -ti --rm --name orgpvc -v (pwd):/home/work janmasrovira/emacs-org:$dockerversion
         docker start orgpvc
         set cmd "export EMACSLOADPATH=\$(cat /root/load-path) && cd /home/work && emacs $target.org -batch -l ~/init.el -f load-init-block -f org-$backend-export-to-latex"
         echo $cmd
