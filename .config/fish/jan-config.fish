@@ -100,7 +100,7 @@ set PATH ~/programs/google-cloud-sdk/bin $PATH
 set VISUAL emacsclient -c -a gedit
 set EDITOR emacsclient
 
-set --export LEDGER_FILE ~/projects/balances/balances.hledger
+set --export LEDGER_FILE ~/projects/balances/balances.journal
 
 jan_key_bindings
 
