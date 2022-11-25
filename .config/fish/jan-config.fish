@@ -57,6 +57,10 @@ set --export LC_NUMERIC "en_US.UTF-8"
 # java jdk
 set --export JAVA_HOME /usr/lib/jvm/java-15-adoptopenjdk
 
+# elan (lean prover)
+set PATH ~/.elan/bin $PATH
+source ~/.elan/env
+
 #stack bin export
 set PATH ~/.local/bin $PATH
 
