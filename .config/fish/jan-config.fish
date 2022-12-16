@@ -68,7 +68,10 @@ set PATH ~/.local/bin $PATH
 set PATH ~/.cabal/bin $PATH
 
 # global stack ghc bin
-set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.4/bin $PATH
+# set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.4/bin $PATH
+
+# ghcup
+set PATH ~/.ghcup/bin $PATH
 
 set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
 
