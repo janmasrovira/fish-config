@@ -27,6 +27,8 @@ abbr -a watch "watch -n 0.5"
 
 abbr -a dirsize "du -hs"
 
+abbr -a smake "make -C (command git rev-parse --show-toplevel)"
+
 abbr -a ctrl "xmodmap ~/.xmonad swap_control_caps"
 
 abbr -a top "htop" #htop = improved top
@@ -66,6 +68,9 @@ set PATH ~/.local/bin $PATH
 
 #cabal bin
 set PATH ~/.cabal/bin $PATH
+
+# juvix hack
+set --export ORMOLU ~/.local/bin/ormolu
 
 # global stack ghc bin
 # set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.4/bin $PATH
