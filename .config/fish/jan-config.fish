@@ -91,7 +91,7 @@ if type -q opam
 end
 
 # texlive 2022
-set PATH $PATH /usr/local/texlive/2022/bin/x86_64-linux
+set PATH $PATH /usr/local/texlive/2023/bin/x86_64-linux
 
 # wasi
 set --export WASI_SYSROOT_PATH ~/programs/wasi-sysroot
