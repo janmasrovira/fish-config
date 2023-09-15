@@ -10,7 +10,7 @@ abbr -a mp "ncmpcpp"
 abbr -a cap "setxkbmap -option \"ctrl:swapcaps\""
 abbr -a cat "bat"
 abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
-abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | awk '/^Nmap/{ip=\$NF}/B8:27:EB/{print ip}'"
+abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Raspberry"
 abbr -a doom "EMACSDIR=~/dotfiles/doom/.emacs.d/ DOOMDIR=~/dotfiles/doom/.doom.d/ doom"
 
 # Add ~/coq/bin (my local dev branch of Coq) to the PATH
