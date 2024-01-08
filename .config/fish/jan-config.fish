@@ -11,6 +11,7 @@ abbr -a cap "setxkbmap -option \"ctrl:swapcaps\""
 abbr -a cat "bat"
 abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Raspberry"
+abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Wibrain"
 abbr -a doom "EMACSDIR=~/dotfiles/doom/.emacs.d/ DOOMDIR=~/dotfiles/doom/.doom.d/ doom"
 
 # Add ~/coq/bin (my local dev branch of Coq) to the PATH
@@ -19,10 +20,7 @@ set PATH ~/projects/fv/coq/_build/install/default/bin $PATH
 # Tells make to automatically use dune in coq dev
 set --export COQ_USE_DUNE true
 
-
-# note that the trailing / is important!
-abbr -a bumusic "time rsync -ahvP /run/media/jan/LocalDisk/Music/ pi/music/"
-abbr -a bumusicdel "time rsync -ahvP --delete --exclude '*.nfo' /run/media/jan/LocalDisk/Music/ pi/music/"
+abbr -a bumusic "time rsync -ahvP /home/jan/music-pi/ microsd/music/ --itemize-changes --no-perms --no-times --no-owner --no-group --size-only --delete --dry-run"
 abbr -a watch "watch -n 0.5"
 
 abbr -a dirsize "du -hs"
@@ -90,14 +88,17 @@ if type -q opam
     eval (opam env)
 end
 
-# texlive 2022
+# texlive 2023
 set PATH $PATH /usr/local/texlive/2023/bin/x86_64-linux
 
 # wasi
 set --export WASI_SYSROOT_PATH ~/programs/wasi-sysroot
 
-# emscripten
-set PATH $PATH /usr/lib/emscripten/
+# JP input
+# When @im=fcitx I cannot insert ^ and ` in emacs
+# set --export XMODIFIERS @im=fcitx
+# set --export GTK_IM_MODULE fcitx
+# set --export QT_IM_MODULE fcitx
 
 # needed to make android studio work on xmonad
 # https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
