@@ -57,6 +57,9 @@ set --export LC_NUMERIC "en_US.UTF-8"
 # java jdk
 set --export JAVA_HOME /usr/lib/jvm/java-15-adoptopenjdk
 
+# fixes issues (such as blank window) with java applications (such as REW)
+set --export _JAVA_AWT_WM_NONREPARENTING 1
+
 # elan (lean prover)
 set PATH ~/.elan/bin $PATH
 source ~/.elan/env
