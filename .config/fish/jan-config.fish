@@ -1,8 +1,8 @@
-abbr -a ll "exa -lah --icons"
+abbr -a ll "eza -lah --icons"
+abbr -a ls "eza --icons"
 abbr -a find "fd"
 abbr -a la "exa -a --icons"
 abbr -a r "cd (command git rev-parse --show-toplevel)"
-abbr -a ls "exa --icons"
 abbr -a cp "rsync -avhP"
 abbr -a ec "emacsclient -c"
 abbr -a es "emacs --daemon"
@@ -12,13 +12,6 @@ abbr -a cat "bat"
 abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Raspberry"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Wibrain"
-abbr -a doom "EMACSDIR=~/dotfiles/doom/.emacs.d/ DOOMDIR=~/dotfiles/doom/.doom.d/ doom"
-
-# Add ~/coq/bin (my local dev branch of Coq) to the PATH
-# This allows emacs to find it
-set PATH ~/projects/fv/coq/_build/install/default/bin $PATH
-# Tells make to automatically use dune in coq dev
-set --export COQ_USE_DUNE true
 
 abbr -a bumusic "time rsync -ahvP /home/jan/music-pi/ microsd/music/ --itemize-changes --no-perms --no-times --no-owner --no-group --size-only --delete --dry-run"
 abbr -a watch "watch -n 0.5"
@@ -35,7 +28,6 @@ abbr -a xclib "xclip -selection clipboard"
 
 abbr -a concatflac "shntool join -n -o flac *.flac"
 
-abbr -a getaudio "youtube-dl --extract-audio --audio-quality 9" #download audio
 # from a youtube video usage example: getaudio
 # https://www.youtube.com/watch?v=f6CrzLXUHx4.
 #
@@ -51,18 +43,11 @@ abbr -a texclean "rm -rf auto/ *.log *.toc *.aux *.fls *.bcf *.gls *.ist *.run.x
 
 set --export TERM xterm-256color
 
-# use '.' in decimal numbers
-set --export LC_NUMERIC "en_US.UTF-8"
-
 # java jdk
 set --export JAVA_HOME /usr/lib/jvm/java-15-adoptopenjdk
 
 # fixes issues (such as blank window) with java applications (such as REW)
 set --export _JAVA_AWT_WM_NONREPARENTING 1
-
-# elan (lean prover)
-set PATH ~/.elan/bin $PATH
-source ~/.elan/env
 
 #stack bin export
 set PATH ~/.local/bin $PATH
@@ -79,17 +64,12 @@ set --export ORMOLU ~/.local/bin/ormolu
 # ghcup
 set PATH ~/.ghcup/bin $PATH
 
-set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
+# set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
+set PATH $PATH ~/.config/emacs/bin
 
 # rust
 # set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 set PATH $PATH ~/.cargo/bin
-
-# ocaml / opam
-# set PATH $PATH ~/.opam/4.10.0/bin
-if type -q opam
-    eval (opam env)
-end
 
 # texlive 2023
 set PATH $PATH /usr/local/texlive/2023/bin/x86_64-linux
@@ -113,7 +93,7 @@ set --export XDG_CONFIG_HOME $HOME/.config
 # google-cloud-sdk binaries (gsutil, gcloud...)
 set PATH ~/programs/google-cloud-sdk/bin $PATH
 
-set VISUAL emacsclient -c -a gedit
+set --export VISUAL emacsclient -c -a gedit
 set EDITOR emacsclient
 
 set --export LEDGER_FILE ~/projects/balances/balances.journal
@@ -122,4 +102,8 @@ jan_key_bindings
 
 if type -q starship
     starship init fish | source
+end
+
+if type -q atuin
+    atuin init fish | source
 end

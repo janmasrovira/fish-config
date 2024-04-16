@@ -5,6 +5,5 @@
 
 # load my personal config
 source ~/.config/fish/jan-config.fish
-
 # Load oh-my-fish configuration.
 # source $OMF_PATH/init.fish
