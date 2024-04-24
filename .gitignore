@@ -7,4 +7,3 @@ fish_variables
 /.config/fish/functions/_nvm*
 /.config/fish/functions/nvm.fish
 *~
-/.config/fish/completions/*.fish
