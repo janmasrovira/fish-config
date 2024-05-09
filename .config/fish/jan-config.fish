@@ -100,6 +100,10 @@ set --export LEDGER_FILE ~/projects/balances/balances.journal
 
 jan_key_bindings
 
+if type -q zoxide
+    zoxide init fish | source
+end
+
 if type -q starship
     starship init fish | source
 end
