@@ -1,17 +1,10 @@
 * Readme
-  This fish configuration depends on omf, refer to the repository for
-  installation instructions: [[https://github.com/oh-my-fish/oh-my-fish]].
+This fish configuration depends on omf, refer to the repository for
+installation instructions: [[https://github.com/oh-my-fish/oh-my-fish]].
 
 ** Additional packages
 *** Theme
-    I use the default theme.
+I use the default theme.
+
 *** Fisher
-    Install [[https://github.com/jorgebucaran/fisher][Fisher]] thus:
-    #+begin_src fish
-    curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-    #+end_src
-*** Z
-    Install [[https://github.com/jethrokuan/z][z]] thus:
-    #+begin_example
-    fisher install jethrokuan/z
-    #+end_example
+I no longer user Fisher, instead I use [[https://github.com/ajeetdsouza/zoxide][Zoxide]].
