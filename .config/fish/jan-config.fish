@@ -23,7 +23,7 @@ abbr -a smake "make -C (command git rev-parse --show-toplevel)"
 
 abbr -a ctrl "xmodmap ~/.xmonad swap_control_caps"
 
-abbr -a top "htop" #htop = improved top
+abbr -a top "btop"
 
 abbr -a xclib "xclip -selection clipboard"
 
