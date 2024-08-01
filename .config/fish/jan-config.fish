@@ -1,6 +1,7 @@
 abbr -a ll "eza -lah --icons auto"
 abbr -a ls "eza --icons auto"
 abbr -a la "eza -a --icons auto"
+abbr -a xelatex "xelatex --halt-on-error"
 abbr -a diff "delta"
 abbr -a find "fd"
 abbr -a r "cd (command git rev-parse --show-toplevel)"
