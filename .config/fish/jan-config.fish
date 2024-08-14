@@ -15,7 +15,7 @@ abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Raspberry"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Wibrain"
 
-abbr -a bumusic "time rsync -ahvP /home/jan/music-pi/ microsd/music/ --itemize-changes --no-perms --no-times --no-owner --no-group --size-only --delete --dry-run"
+abbr -a bumusic "time rsync -ahvP ~/music-pi/ ~/music-phone/ --stats --itemize-changes --no-perms --no-times --no-owner --no-group --size-only --delete --dry-run"
 abbr -a watch "watch -n 0.5"
 
 abbr -a dirsize "du -hs"
