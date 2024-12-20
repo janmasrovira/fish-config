@@ -28,6 +28,8 @@ abbr -a top "btop"
 
 abbr -a xclib "xclip -selection clipboard"
 
+abbr -a base64 "base64 -w0"
+
 abbr -a concatflac "shntool join -n -o flac *.flac"
 
 # from a youtube video usage example: getaudio
