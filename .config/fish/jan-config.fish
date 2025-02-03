@@ -54,7 +54,7 @@ set --export _JAVA_AWT_WM_NONREPARENTING 1
 # for Anoma
 set PATH ~/.mix/escripts $PATH
 set --export ANOMA_PATH ~/projects/anoma
-set --export ANOMA_DEBUG 1
+set --export ANOMA_DEBUG ""
 
 #stack bin export
 set PATH ~/.local/bin $PATH
