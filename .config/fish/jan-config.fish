@@ -73,6 +73,9 @@ set --export ORMOLU ~/.local/bin/ormolu
 # ghcup
 set PATH ~/.ghcup/bin $PATH
 
+# lean
+set PATH ~/.elan/bin $PATH
+
 # set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
 set PATH $PATH ~/.config/emacs/bin
 
