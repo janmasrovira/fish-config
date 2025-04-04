@@ -1,12 +1,15 @@
-# 1. Search for text in files using Ripgrep
-# 2. Interactively restart Ripgrep with reload action
+# * Search for text in files using Ripgrep
+# * Interactively restart Ripgrep with reload action
 #    * Press alt-enter to switch to fzf-only filtering
-# 3. Open the file in Vim
+# * Open the file in Emacs
+# Example usages:
+# 1) rr            # search in all files
+# 2) rr '-g *.txt' # only search in .txt files
 function rr
-  set RG_PREFIX "rg --multiline --column --line-number --no-heading --color=always --smart-case "
-  set INITIAL_QUERY "$argv"
+  set extra_rg_opts "$argv"
+  set RG_PREFIX "rg --multiline --column --line-number --no-heading --color=always --smart-case $extra_rg_opts"
 
-  fzf --ansi --disabled --query "$INITIAL_QUERY" \
+  fzf --ansi --disabled \
       --bind "start:reload:$RG_PREFIX {q}" \
       --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
       --bind "alt-enter:unbind(change,alt-enter)+change-prompt(2. fzf> )+enable-search+clear-query" \

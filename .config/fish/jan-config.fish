@@ -83,8 +83,10 @@ set PATH $PATH ~/.config/emacs/bin
 # set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 set PATH $PATH ~/.cargo/bin
 
-# texlive 2024
-set PATH $PATH /usr/local/texlive/2024/bin/x86_64-linux
+# texlive 2025
+set PATH $PATH /usr/local/texlive/2025/bin/x86_64-linux
+
+set PATH $PATH ~/.config/.foundry/bin
 
 # wasi
 set --export WASI_SYSROOT_PATH ~/programs/wasi-sysroot
