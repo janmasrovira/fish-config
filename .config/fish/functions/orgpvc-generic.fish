@@ -1,8 +1,8 @@
 # use: cd /report && orgpvc-generic [latex | beamer] report
 function orgpvc-generic --argument-names backend target
     echo "watching " $target.org
-    set dockerversion "2022-07-16"
-    echo "using version " $dockerversion
+    set dockerversion "2025-08-01"
+    echo "using docker emacs-org:$dockerversion"
     while inotifywait -e close_write $target.org
         docker create -ti --rm --name orgpvc -v (pwd):/home/work janmasrovira/emacs-org:$dockerversion
         docker start orgpvc
