@@ -33,6 +33,14 @@ abbr -a base64 "base64 -w0"
 
 abbr -a concatflac "shntool join -n -o flac *.flac"
 
+function texlive-docker
+  docker run --rm -v (pwd):/work -w /work texlive/texlive:TL2024-historic $argv
+end
+
+alias latexmk-docker='texlive-docker latexmk'
+alias xelatex-docker='texlive-docker xelatex'
+alias pdflatex-docker='texlive-docker pdflatex'
+
 # from a youtube video usage example: getaudio
 # https://www.youtube.com/watch?v=f6CrzLXUHx4.
 #
