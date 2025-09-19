@@ -4,5 +4,6 @@ function get-tidal --argument-names album
     set path ~/Downloads/get-tidal
     tidal-dl -o $path -l "$album" -q HiFi -r P1080
     beet import $path
+    echo "updating mpc library... (safe to interrupt)"
     mpc update --wait
 end

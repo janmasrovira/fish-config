@@ -16,7 +16,16 @@ abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Raspberry"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Wibrain"
 
-abbr -a bumusic "time rsync -ahvP ~/music-pi/ ~/music-phone/ --stats --itemize-changes --no-perms --no-times --no-owner --no-group --size-only --delete --dry-run"
+abbr -a bumusic_old "time rsync -ahvP ~/music-pi/ ~/music-phone/ --stats --itemize-changes --no-perms --no-times --no-owner --no-group --size-only --delete --dry-run"
+
+abbr -a mount-phone sshfs -p 8022 u0_a489@192.168.1.203:/storage/emulated/0/Music music-phone -o uid=$(id -u) -o gid=$(id -g) -o umask=022
+
+# assumes sshd is running on termux and rsync is installed on the phone
+abbr -a bumusic time rsync -rhvP --size-only \
+                -e \'ssh -p 8022\' \
+                "$HOME/music-pi/" jan@192.168.1.203:/storage/emulated/0/Music/ \
+                --stats --itemize-changes --delete --dry-run
+
 abbr -a watch "watch -n 0.5"
 
 abbr -a dirsize "du -hs"
