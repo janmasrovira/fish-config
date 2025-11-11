@@ -71,6 +71,8 @@ set --export JAVA_HOME /usr/lib/jvm/java-15-adoptopenjdk
 # fixes issues (such as blank window) with java applications (such as REW)
 set --export _JAVA_AWT_WM_NONREPARENTING 1
 
+set --export PATH ~/projects/python-envs/global-env/bin $PATH
+
 # for Anoma
 set PATH ~/.mix/escripts $PATH
 set --export ANOMA_PATH ~/projects/anoma
