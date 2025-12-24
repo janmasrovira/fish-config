@@ -4,6 +4,4 @@ function get-tidal --argument-names album
     set path ~/Downloads/get-tidal
     tidal-dl-ng dl "$album"
     beet import $path
-    echo "updating mpc library... (safe to interrupt)"
-    mpc update --wait
 end
