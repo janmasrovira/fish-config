@@ -73,10 +73,8 @@ set --export _JAVA_AWT_WM_NONREPARENTING 1
 
 set --export PATH ~/projects/python-envs/global-env/bin $PATH
 
-# for Anoma
-set PATH ~/.mix/escripts $PATH
-set --export ANOMA_PATH ~/projects/anoma
-set --export ANOMA_DEBUG ""
+# fsharp
+set PATH ~/.dotnet/tools $PATH
 
 #stack bin export
 set PATH ~/.local/bin $PATH
@@ -126,6 +124,9 @@ set --export XDG_CONFIG_HOME $HOME/.config
 
 # google-cloud-sdk binaries (gsutil, gcloud...)
 set PATH ~/programs/google-cloud-sdk/bin $PATH
+
+# go binaries
+set PATH ~/go/bin $PATH
 
 set --export VISUAL emacsclient -c -a gedit
 set EDITOR emacsclient
