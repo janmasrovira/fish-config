@@ -71,16 +71,16 @@ set --export JAVA_HOME /usr/lib/jvm/java-15-adoptopenjdk
 # fixes issues (such as blank window) with java applications (such as REW)
 set --export _JAVA_AWT_WM_NONREPARENTING 1
 
-set --export PATH ~/projects/python-envs/global-env/bin $PATH
+fish_add_path -g ~/projects/python-envs/global-env/bin
 
 # fsharp
-set PATH ~/.dotnet/tools $PATH
+fish_add_path -g ~/.dotnet/tools
 
 #stack bin export
-set PATH ~/.local/bin $PATH
+fish_add_path -g ~/.local/bin
 
 #cabal bin
-set PATH ~/.cabal/bin $PATH
+fish_add_path -g ~/.cabal/bin
 
 # juvix hack
 set --export ORMOLU ~/.local/bin/ormolu
@@ -89,22 +89,22 @@ set --export ORMOLU ~/.local/bin/ormolu
 # set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.4/bin $PATH
 
 # ghcup
-set PATH ~/.ghcup/bin $PATH
+fish_add_path -g ~/.ghcup/bin
 
 # lean
-set PATH ~/.elan/bin $PATH
+fish_add_path -g ~/.elan/bin
 
 # set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
-set PATH $PATH ~/.config/emacs/bin
+fish_add_path -ga ~/.config/emacs/bin
 
 # rust
 # set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-set PATH $PATH ~/.cargo/bin
+fish_add_path -ga ~/.cargo/bin
 
 # texlive 2025
-set PATH $PATH /usr/local/texlive/2025/bin/x86_64-linux
+fish_add_path -ga /usr/local/texlive/2025/bin/x86_64-linux
 
-set PATH $PATH ~/.config/.foundry/bin
+fish_add_path -ga ~/.config/.foundry/bin
 
 # wasi
 set --export WASI_SYSROOT_PATH ~/programs/wasi-sysroot
@@ -119,10 +119,10 @@ set --export WASI_SYSROOT_PATH ~/programs/wasi-sysroot
 set --export XDG_CONFIG_HOME $HOME/.config
 
 # google-cloud-sdk binaries (gsutil, gcloud...)
-set PATH ~/programs/google-cloud-sdk/bin $PATH
+fish_add_path -g ~/programs/google-cloud-sdk/bin
 
 # go binaries
-set PATH ~/go/bin $PATH
+fish_add_path -g ~/go/bin
 
 set --export VISUAL emacsclient -c -a gedit
 set EDITOR emacsclient
