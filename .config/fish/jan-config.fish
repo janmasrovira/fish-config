@@ -10,15 +10,11 @@ abbr -a ec "emacsclient -c"
 abbr -a es "emacs --daemon"
 abbr -a mpvs "mpv --osd-level=0 --quiet --no-osc"
 abbr -a mp "ncmpcpp"
-abbr -a cap "setxkbmap -option \"ctrl:swapcaps\""
 abbr -a cat "bat"
 abbr -a wcpe "mpv http://audio-ogg.ibiblio.org:8000/wcpe.ogg"
 abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Raspberry"
-abbr -a findpi "sudo nmap -sP 192.168.1.0/24 | rg -B 2 Wibrain"
 
-abbr -a bumusic_old "time rsync -ahvP ~/music-pi/ ~/music-phone/ --stats --itemize-changes --no-perms --no-times --no-owner --no-group --size-only --delete --dry-run"
-
-abbr -a mount-phone sshfs -p 8022 u0_a489@192.168.1.203:/storage/emulated/0/Music music-phone -o uid=$(id -u) -o gid=$(id -g) -o umask=022
+abbr -a mount-phone sshfs -p 8022 u0_a489@192.168.1.203:/storage/emulated/0/Music $HOME/music-phone -o uid=(id -u) -o gid=(id -g) -o umask=022
 
 # assumes sshd is running on termux and rsync is installed on the phone
 abbr -a bumusic time rsync -rhvP --size-only \
@@ -31,8 +27,6 @@ abbr -a watch "watch -n 0.5"
 abbr -a dirsize "du -hs"
 
 abbr -a smake "make -C (command git rev-parse --show-toplevel)"
-
-abbr -a ctrl "xmodmap ~/.xmonad swap_control_caps"
 
 abbr -a top "btop"
 
@@ -50,23 +44,11 @@ alias latexmk-docker='texlive-docker latexmk'
 alias xelatex-docker='texlive-docker xelatex'
 alias pdflatex-docker='texlive-docker pdflatex'
 
-# from a youtube video usage example: getaudio
-# https://www.youtube.com/watch?v=f6CrzLXUHx4.
-#
-# Since google music does not support m4a, you should convert the downloaded
-# file afterwards to a suitable format (eg ogg): ffmpeg -i file.m4a -f ogg
-# file.ogg. Note that youtube-dl also offers an options for audio conversion,
-# but the size of the converted file is much larger than the original, which
-# does not make any sense.
-
 abbr -a gitzip "git archive HEAD --format=zip > repo.zip"
 
 abbr -a texclean "rm -rf auto/ *.log *.toc *.aux *.fls *.bcf *.gls *.ist *.run.xml *.glg *.blg *.fdb_latexmk _minted* *.out *.pyg *.glo *.synctex.gz"
 
 set --export TERM xterm-256color
-
-# java jdk
-set --export JAVA_HOME /usr/lib/jvm/java-15-adoptopenjdk
 
 # fixes issues (such as blank window) with java applications (such as REW)
 set --export _JAVA_AWT_WM_NONREPARENTING 1
@@ -82,23 +64,15 @@ fish_add_path -g ~/.local/bin
 #cabal bin
 fish_add_path -g ~/.cabal/bin
 
-# juvix hack
-set --export ORMOLU ~/.local/bin/ormolu
-
-# global stack ghc bin
-# set PATH ~/.stack/programs/x86_64-linux/ghc-tinfo6-9.2.4/bin $PATH
-
 # ghcup
 fish_add_path -g ~/.ghcup/bin
 
 # lean
 fish_add_path -g ~/.elan/bin
 
-# set PATH $PATH ~/dotfiles/doom/.emacs.d/bin
 fish_add_path -ga ~/.config/emacs/bin
 
 # rust
-# set --export RUST_SRC_PATH "$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fish_add_path -ga ~/.cargo/bin
 
 # texlive 2025
