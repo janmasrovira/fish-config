@@ -56,6 +56,8 @@ set --export _JAVA_AWT_WM_NONREPARENTING 1
 fish_add_path -g ~/projects/python-envs/global-env/bin
 
 # fsharp
+set -gx DOTNET_ROOT ~/.dotnet
+fish_add_path ~/.dotnet
 fish_add_path -g ~/.dotnet/tools
 
 #stack bin export
