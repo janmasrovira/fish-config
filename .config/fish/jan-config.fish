@@ -115,10 +115,6 @@ set --export WASI_SYSROOT_PATH ~/programs/wasi-sysroot
 # set --export GTK_IM_MODULE fcitx
 # set --export QT_IM_MODULE fcitx
 
-# needed to make android studio work on xmonad
-# https://wiki.haskell.org/Xmonad/Frequently_asked_questions#Problems_with_Java_applications.2C_Applet_java_console
-# set --export _JAVA_AWT_WM_NONREPARENTING 1
-
 # xdg config home
 set --export XDG_CONFIG_HOME $HOME/.config
 
