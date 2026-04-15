@@ -8,3 +8,9 @@ I use the default theme.
 
 *** Fisher
 I no longer user Fisher, instead I use [[https://github.com/ajeetdsouza/zoxide][Zoxide]].
+
+** Secrets
+Run =./bin/init-secrets.fish= after cloning to pull secrets from Bitwarden
+into =~/.config/fish/conf.d/secrets.fish= (gitignored). The list of secrets
+to fetch is declared in =bin/secrets-manifest.yaml=. Requires =bw= and
+[[https://github.com/mikefarah/yq][mikefarah/yq]] (on Arch: =go-yq=).
