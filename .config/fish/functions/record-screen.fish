@@ -174,8 +174,16 @@ function record-screen --description 'Record the screen with ffmpeg (interactive
 
     # --- output file ---
     set -l default_out ~/Videos/recording-(date +%Y%m%d-%H%M%S).mkv
+    echo "Output file (relative paths go under ~/Videos)"
     read -l -P "Output file [$default_out]: " out
-    test -z "$out"; and set out $default_out
+    if test -z "$out"
+        set out $default_out
+    else
+        # read does not expand a leading ~; do it ourselves, then resolve
+        # relative paths against ~/Videos rather than the current directory.
+        set out (string replace -r '^~' $HOME -- $out)
+        string match -q '/*' -- $out; or set out ~/Videos/$out
+    end
     mkdir -p (dirname $out)
 
     echo
