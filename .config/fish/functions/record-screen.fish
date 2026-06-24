@@ -67,12 +67,29 @@ function record-screen --description 'Record the screen with ffmpeg (interactive
     end
     set -l screen (xrandr --query | string match -rg 'current (\d+) x (\d+)')
     set -a monlines (printf 'All monitors\t%sx%s+0+0' $screen[1] $screen[2])
+    # Sentinel row: draw a rectangle with slop and record just that region.
+    set -a monlines (printf 'Select region (draw rectangle)…\t__REGION__')
 
     set -l pick (printf '%s\n' $monlines \
         | fzf --delimiter \t --with-nth 1 --height 40% \
             --header 'j/k: move · Tab: filter/nav · Enter: confirm' \
             (__record_screen_navargs monitor j k)); or return 1
     set -l g (string split -f2 \t -- $pick)
+
+    # Region: query a rectangle interactively, then fall through to the same
+    # geometry parsing as the monitor case.
+    if test "$g" = __REGION__
+        if not type -q slop
+            echo "record-screen: 'slop' not found; install it to select a region" >&2
+            return 1
+        end
+        set g (slop -f '%wx%h+%x+%y'); or return 1
+        # x11grab + libx264 (yuv420p) need even dimensions; round W/H down.
+        set -l rw (string match -rg '^(\d+)x' -- $g)
+        set -l rh (string match -rg '^\d+x(\d+)\+' -- $g)
+        set -l rest (string replace -r '^\d+x\d+' '' -- $g)
+        set g (math "$rw - $rw % 2")x(math "$rh - $rh % 2")$rest
+    end
     set -l size (string match -rg '^(\d+x\d+)' -- $g)
     set -l offset (string replace -r '^\d+x\d+\+' '' -- $g | string replace '+' ',')
 
