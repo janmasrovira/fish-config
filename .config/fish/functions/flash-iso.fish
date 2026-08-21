@@ -1,10 +1,38 @@
-# flash-iso [-a|--all] [-n|--dry-run] <image.iso>
+# flash-iso [-a|--all] [-n|--dry-run] [-h|--help] <image.iso>
 # Write an ISO to a whole USB disk with dd. USB-only unless --all; --dry-run
 # writes nothing. Verifies a sibling <image.iso>.sha256 if present.
 
+function __flash_iso_usage
+    echo 'usage: flash-iso [-a|--all] [-n|--dry-run] [-h|--help] <image.iso>
+
+Write an ISO to a whole USB disk with dd. The target is picked
+interactively with fzf.
+
+options:
+  -a, --all      list every whole disk, not just USB ones
+  -n, --dry-run  show what would happen; write nothing
+  -h, --help     show this help
+
+notes:
+  - a sibling <image.iso>.sha256 is verified first if it exists.
+
+examples:
+  flash-iso archlinux.iso        # pick a USB disk and write to it
+  flash-iso -n archlinux.iso     # rehearse without writing
+  flash-iso --all archlinux.iso  # also offer non-USB disks'
+end
+
 function flash-iso --description 'Write an ISO to a USB drive with dd (interactive)'
-    argparse a/all n/dry-run -- $argv
-    or return 1
+    argparse h/help a/all n/dry-run -- $argv
+    or begin
+        __flash_iso_usage >&2
+        return 1
+    end
+
+    if set -q _flag_help
+        __flash_iso_usage
+        return 0
+    end
 
     for cmd in fzf lsblk dd
         if not type -q $cmd
@@ -14,7 +42,7 @@ function flash-iso --description 'Write an ISO to a USB drive with dd (interacti
     end
 
     if test (count $argv) -ne 1
-        echo "usage: flash-iso [-a|--all] [-n|--dry-run] <image.iso>" >&2
+        __flash_iso_usage >&2
         return 1
     end
 
