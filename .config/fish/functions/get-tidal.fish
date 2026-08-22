@@ -21,7 +21,7 @@ function get-tidal -d "Download Tidal Album via tiddl and import into beets"
     end
 
     set -l tmpdir (mktemp -d); or return 1
-    tiddl download --path "$tmpdir" url "$album"; or begin
+    tiddl download --path "$tmpdir" --dolby-atmos none url "$album"; or begin
         rm -rf "$tmpdir"
         return 1
     end
