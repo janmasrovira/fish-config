@@ -16,8 +16,25 @@ function get-tidal -d "Download Tidal Album via tiddl and import into beets"
 
     if not mountpoint -q ~/music-beets
         echo "get-tidal: ~/music-beets is not mounted" >&2
-        echo "  try: sshfs bee:/mnt/big-storage/music ~/music-beets" >&2
-        return 1
+        read -l -P 'Run sshfs bee:/mnt/big-storage/music ~/music-beets? [y/N] ' answer
+        or return 1
+        if not string match -qri '^y(es)?$' -- "$answer"
+            return 1
+        end
+
+        if not command -q sshfs
+            echo "get-tidal: 'sshfs' not found in PATH" >&2
+            return 1
+        end
+        sshfs bee:/mnt/big-storage/music ~/music-beets
+        or begin
+            echo "get-tidal: sshfs mount failed" >&2
+            return 1
+        end
+        if not mountpoint -q ~/music-beets
+            echo "get-tidal: ~/music-beets is still not mounted" >&2
+            return 1
+        end
     end
 
     set -l tmpdir (mktemp -d); or return 1
