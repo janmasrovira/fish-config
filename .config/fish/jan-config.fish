@@ -72,6 +72,10 @@ fish_add_path -g ~/.ghcup/bin
 # lean
 fish_add_path -g ~/.elan/bin
 
+if status is-interactive; and test -f ~/projects/blp/lean-forms/completions/forms.fish
+    source ~/projects/blp/lean-forms/completions/forms.fish
+end
+
 fish_add_path -ga ~/.config/emacs/bin
 
 # rust

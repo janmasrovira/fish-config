@@ -1,11 +1,11 @@
-# flash-iso [-a|--all] [-n|--dry-run] [-h|--help] <image.iso>
-# Write an ISO to a whole USB disk with dd. USB-only unless --all; --dry-run
-# writes nothing. Verifies a sibling <image.iso>.sha256 if present.
+# flash-iso [-a|--all] [-n|--dry-run] [-h|--help] <image>
+# Write an ISO or IMG (optionally XZ-compressed) to a whole USB disk.
+# USB-only unless --all; --dry-run writes nothing. Verifies <image>.sha256 if present.
 
 function __flash_iso_usage
-    echo 'usage: flash-iso [-a|--all] [-n|--dry-run] [-h|--help] <image.iso>
+    echo 'usage: flash-iso [-a|--all] [-n|--dry-run] [-h|--help] <image>
 
-Write an ISO to a whole USB disk with dd. The target is picked
+Write an ISO or IMG to a whole USB disk with dd. The target is picked
 interactively with fzf.
 
 options:
@@ -14,15 +14,17 @@ options:
   -h, --help     show this help
 
 notes:
-  - a sibling <image.iso>.sha256 is verified first if it exists.
+  - .xz images are checked and decompressed while writing.
+  - a sibling <image>.sha256 is verified first if it exists.
 
 examples:
   flash-iso archlinux.iso        # pick a USB disk and write to it
+  flash-iso haos.img.xz          # decompress and write an XZ image
   flash-iso -n archlinux.iso     # rehearse without writing
   flash-iso --all archlinux.iso  # also offer non-USB disks'
 end
 
-function flash-iso --description 'Write an ISO to a USB drive with dd (interactive)'
+function flash-iso --description 'Write an ISO or IMG, including .xz, to a USB drive (interactive)'
     argparse h/help a/all n/dry-run -- $argv
     or begin
         __flash_iso_usage >&2
@@ -66,6 +68,21 @@ function flash-iso --description 'Write an ISO to a USB drive with dd (interacti
             return 1
         end
         echo "  checksum OK"
+    end
+
+    set -l compressed 0
+    if string match -qi '*.xz' -- "$iso"
+        set compressed 1
+        if not type -q xz
+            echo "flash-iso: 'xz' not found in PATH" >&2
+            return 1
+        end
+        echo "checking XZ image integrity ..."
+        xz -t -- "$iso"
+        or begin
+            echo "flash-iso: XZ integrity check failed for $iso" >&2
+            return 1
+        end
     end
 
     # Whole disks only; -P keeps MODEL fields with spaces intact.
@@ -148,7 +165,11 @@ function flash-iso --description 'Write an ISO to a USB drive with dd (interacti
     end
 
     if set -q _flag_dry_run
-        echo "[dry-run] would run: sudo dd if=$iso of=$dev bs=4M status=progress oflag=sync"
+        if test $compressed -eq 1
+            echo "[dry-run] would run: xz -dc -- "(string escape -- "$iso")" | sudo dd of=$dev bs=4M iflag=fullblock status=progress oflag=sync"
+        else
+            echo "[dry-run] would run: sudo dd if="(string escape -- "$iso")" of=$dev bs=4M status=progress oflag=sync"
+        end
         echo "dry run complete — no changes made."
         return 0
     end
@@ -160,12 +181,28 @@ function flash-iso --description 'Write an ISO to a USB drive with dd (interacti
     end
 
     echo "writing $iso -> $dev ..."
-    sudo dd if=$iso of=$dev bs=4M status=progress oflag=sync
-    or begin
-        echo "flash-iso: dd failed" >&2
-        return 1
+    if test $compressed -eq 1
+        # Authenticate before starting the pipeline; check both processes afterward.
+        sudo -v
+        or return 1
+        xz -dc -- "$iso" | sudo dd of=$dev bs=4M iflag=fullblock status=progress oflag=sync
+        set -l write_status $pipestatus
+        if test "$write_status[1]" -ne 0; or test "$write_status[2]" -ne 0
+            echo "flash-iso: decompression or disk write failed" >&2
+            return 1
+        end
+    else
+        sudo dd if=$iso of=$dev bs=4M status=progress oflag=sync
+        or begin
+            echo "flash-iso: dd failed" >&2
+            return 1
+        end
     end
     sudo sync
+    or begin
+        echo "flash-iso: sync failed" >&2
+        return 1
+    end
 
     echo "done. it is now safe to remove $dev."
 end
